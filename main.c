@@ -2,7 +2,7 @@
 #include <stdbool.h>
 
 int different_count (const int *A, const int *B, int len);
-int * max_value (int *A, int *B);
+int max_value(const int *A, int *B, int len);
 void max_sum_neighbours (int *A, int *B);
 
 int main() {
@@ -33,12 +33,7 @@ int main() {
             break;
         }
         case 2: {
-            int * array = max_value (A, B);
-            while (array)
-            {
-                printf("%d", *array);
-                ++array;
-            }
+            printf("The highest value in these arrays: %d", max_value(A, B, len));
             break;
         }
         case 3: {
@@ -82,9 +77,19 @@ int different_count (const int *A, const int *B,  int len)
         return uniques_count;
 }
 
-int * max_value (int *A, int *B)
+int max_value(const int *A, int *B, int len)
 {
-    return 0;
+    int tmp_max = *A;
+    ++A;
+    for (int i = 0; i < len; i++){
+        if (A[i] > tmp_max)
+            tmp_max = A[i];
+    }
+    for (int i = 0; i < len; i++){
+        if (B[i] > tmp_max)
+            tmp_max = B[i];
+    }
+    return tmp_max;
 }
 void max_sum_neighbours (int *A, int *B)
 {
