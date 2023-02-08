@@ -1,0 +1,3 @@
+/home/grabson/Documents/devevop/C/arrays/cmake-build-debug/CMakeFiles/arrays.dir
+/home/grabson/Documents/devevop/C/arrays/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/grabson/Documents/devevop/C/arrays/cmake-build-debug/CMakeFiles/rebuild_cache.dir
