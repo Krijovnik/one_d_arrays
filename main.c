@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 
 int different_count (const int *A, const int *B, int len);
 int * max_value (int *A, int *B);
@@ -48,4 +49,43 @@ int main() {
             printf("Incorrect number\n");
     }
     return 0;
+}
+
+int different_count (const int *A, const int *B,  int len)
+{
+    int uniques_count = 0;
+    int uniques[2*len];
+    for (int i = 0; i < len; i++)
+    {
+        bool is_new = true;
+        for (int u = 0; u < uniques_count; u++) {
+            if (A[i] == uniques[u]){
+                is_new = false; break;}
+        }
+        if (is_new) {
+            uniques[uniques_count] = A[i]; ++uniques_count;
+        }
+    }
+
+    for (int i = 0; i < len; i++)
+    {
+        bool is_new = true;
+        for (int u = 0; u < uniques_count; u++) {
+            if (B[i] == uniques[u]){
+                is_new = false; break;}
+        }
+        if (is_new) {
+            uniques[uniques_count] = B[i]; ++uniques_count;
+        }
+    }
+
+        return uniques_count;
+}
+
+int * max_value (int *A, int *B)
+{
+    return 0;
+}
+void max_sum_neighbours (int *A, int *B)
+{
 }
