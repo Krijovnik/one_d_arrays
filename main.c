@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int different_count (int *A, int *B);
+int different_count (const int *A, const int *B, int len);
 int * max_value (int *A, int *B);
 void max_sum_neighbours (int *A, int *B);
 
@@ -28,7 +28,7 @@ int main() {
     scanf("%d", &option);
     switch (option) {
         case 1: {
-            printf("%d", different_count(A, B));
+            printf("%d", different_count(A, B, len));
             break;
         }
         case 2: {
