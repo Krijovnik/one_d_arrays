@@ -6,9 +6,11 @@ int max_value(const int *A, const int *B, int len);
 void max_sum_neighbours(const int *A, const int len);
 
 int main() {
-    printf("Enter arrays length: ");
     int len = 0;
-    while (len < 2) scanf("%d", &len);
+    while (len < 2) {
+        printf("Enter arrays length (> 1): ");
+        scanf("%d", &len);
+    }
     int A[len];
     int B[len];
     printf("Fill first array\n");
