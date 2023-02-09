@@ -3,7 +3,7 @@
 
 int different_count (const int *A, const int *B, int len);
 int max_value(const int *A, const int *B, int len);
-void max_sum_neighbours(const int *A, const int len);
+void max_sum_neighbours(const int *A, int len);
 
 int main() {
     int len = 0;
@@ -92,7 +92,7 @@ int max_value(const int *A, const int *B, int len)
     }
     return tmp_max;
 }
-void max_sum_neighbours(const int *A, const int len)
+void max_sum_neighbours(const int *A, int len)
 {
     int max_first_index = 0;
     int tmp_max_sum = A[0] + A[1];
