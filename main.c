@@ -2,8 +2,8 @@
 #include <stdbool.h>
 
 int different_count (const int *A, const int *B, int len);
-int max_value(const int *A, int *B, int len);
-void max_sum_neighbours (int *A, int *B);
+int max_value(const int *A, const int *B, int len);
+void max_sum_neighbours(const int *A);
 
 int main() {
     printf("Enter arrays length: ");
@@ -37,7 +37,7 @@ int main() {
             break;
         }
         case 3: {
-            max_sum_neighbours(A, B);
+            max_sum_neighbours(A);
             break;
         }
         default:
@@ -77,11 +77,10 @@ int different_count (const int *A, const int *B,  int len)
         return uniques_count;
 }
 
-int max_value(const int *A, int *B, int len)
+int max_value(const int *A, const int *B, int len)
 {
-    int tmp_max = *A;
-    ++A;
-    for (int i = 0; i < len; i++){
+    int tmp_max = A[0];
+    for (int i = 1; i < len; i++){
         if (A[i] > tmp_max)
             tmp_max = A[i];
     }
@@ -91,6 +90,7 @@ int max_value(const int *A, int *B, int len)
     }
     return tmp_max;
 }
-void max_sum_neighbours (int *A, int *B)
+void max_sum_neighbours(const int *A)
 {
+
 }
