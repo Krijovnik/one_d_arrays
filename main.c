@@ -3,7 +3,7 @@
 
 int different_count (const int *A, const int *B, int len);
 int max_value(const int *A, const int *B, int len);
-void max_sum_neighbours(const int *A);
+void max_sum_neighbours(const int *A, const int len);
 
 int main() {
     printf("Enter arrays length: ");
@@ -37,7 +37,7 @@ int main() {
             break;
         }
         case 3: {
-            max_sum_neighbours(A);
+            max_sum_neighbours(A, len);
             break;
         }
         default:
@@ -90,7 +90,15 @@ int max_value(const int *A, const int *B, int len)
     }
     return tmp_max;
 }
-void max_sum_neighbours(const int *A)
+void max_sum_neighbours(const int *A, const int len)
 {
-
+    int max_first_index = 0;
+    int tmp_max_sum = A[0] + A[1];
+    for (int i = 1; i < len - 1; i++) {
+        if (A[i] + A[i + 1] > tmp_max_sum) {
+            tmp_max_sum = A[i] + A[i + 1];
+            max_first_index = i;
+        }
+    }
+    printf("Neighbours with highest sum is %d and %d", A[max_first_index], A[max_first_index + 1]);
 }
